@@ -1,0 +1,26 @@
+#navbar-uems {
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+
+    a {
+        color: #fff;
+
+        &:hover {
+            color: #00CB54;
+        }
+    }
+}
+
+#navbar-primary {
+    padding: 0;
+
+    .usermenu {
+        display: flex;
+
+        .login {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
