@@ -76,5 +76,11 @@ $templatecontext = [
 if (isloggedin()) {
     echo $OUTPUT->render_from_template('theme_uems/frontpage', $templatecontext);
 } else {
+    $frontpageutil = new \theme_uems\util\frontpage();
+
+    $templatecontext['favouritecourses'] = $frontpageutil->get_favourite();
+
+    $templatecontext['slides'] = $frontpageutil->get_slides();
+
     echo $OUTPUT->render_from_template('theme_uems/frontpage_guest', $templatecontext);
 }

@@ -13,3 +13,13 @@ function theme_uems_get_main_scss_content($theme) {
 
     return $scss . ' ' . $variables . ' ' . $uems;
 }
+
+function theme_uems_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+    $theme = theme_config::load('uems');
+
+    if ($context->contextlevel == CONTEXT_SYSTEM && preg_match("/^sliderimage[1-9][0-9]?$/", $filearea) !== false) {
+        return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
+    }
+
+    send_file_not_found();
+}

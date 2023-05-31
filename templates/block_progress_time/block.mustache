@@ -1,0 +1,21 @@
+{{^canviewreport}}
+    <div class="progress">
+        <div class="progress-bar bg-danger"
+             role="progressbar"
+             style="width: {{progress}}%"
+             aria-valuenow="{{progress}}"
+             aria-valuemin="0"
+             aria-valuemax="100">
+            {{progress}}%
+        </div>
+    </div>
+{{/canviewreport}}
+
+{{#canviewreport}}
+    <div class="footer mt-4">
+        <a class="btn btn-primary btn-block" href="{{config.wwwroot}}/blocks/progress_time/report.php?id={{courseid}}">
+            <i class="fa fa-users"></i>
+            {{#str}}viewreport, block_progress_time{{/str}}
+        </a>
+    </div>
+{{/canviewreport}}
